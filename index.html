@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshith Reddy Madireddy — AI Developer & Researcher</title>
+  <!-- Scroll restoration & fresh start: ensure page always starts at top (01 Academic Identity) on reload -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    if (window.location.hash) {
+      try {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      } catch (e) {}
+    }
+  </script>
+
+  <!-- Google Fonts: Newsreader (Editorial Serif), Plus Jakarta Sans (Clean UI), IBM Plex Mono (Technical Metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- Master Scientific Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=20260925_119" />
+</head>
+<body class="bg-[#faf8f5] text-slate-900 subtle-grid selection:bg-sky-100 selection:text-sky-900">
+
+  <!-- Ambient Light Scientific Glow (Aesthetic Tonal Canvas) -->
+  <div class="ambient-glow"></div>
+
+  <!-- =========================================================================
+       PRINT-ONLY ACADEMIC HEADER (Visible only during Cmd+P)
+       ========================================================================= -->
+  <div class="hidden print-only-header">
+    <div class="text-center">
+      <h1 class="text-3xl font-bold tracking-tight applicant-name">Harshith Reddy Madireddy</h1>
+      <p class="text-sm font-serif italic mt-1">AI Developer & Researcher • Predictive Cybersecurity • Reliable Intelligent Systems</p>
+      <div class="text-xs text-slate-600 mt-2 space-x-3 font-mono">
+        <span>Email: harshithreddymadireddy1@gmail.com</span> •
+        <span>Portfolio: https://harshithreddymadireddy.github.io/portfolio/</span> •
+        <span>Location: Hyderabad, India</span> •
+        <span>INEX 2024 Silver Medalist</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       TOP HEADER (Glass, Minimal, with Persistent CV Actions)
+       ========================================================================= -->
+  <header class="sticky top-0 z-50 w-full glass-header transition-all">
+    <div class="w-full px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
+      
+      <!-- Left: Name & Small Academic Descriptor -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div id="applicantInitials" class="w-9 h-9 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center font-mono font-bold text-sm shadow-sm group-hover:scale-105 transition">
+          HR
+        </div>
+        <div>
+          <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-slate-900 applicant-name">
+            Harshith Reddy Madireddy
+          </span>
+          <span id="heroDescriptor" class="hidden sm:inline-block text-[11px] font-mono text-sky-800 ml-2 px-2.5 py-0.5 rounded-full bg-sky-100/70 font-semibold">
+            AI/ML RESEARCHER · FALL 2027 MS/PHD APPLICANT
+          </span>
+        </div>
+      </a>
+
+      <!-- Center / Right: View CV, Contact & Mobile Menu Toggle -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+
+        <!-- Persistent CV Modal Trigger -->
+        <button class="view-cv-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono bg-white hover:bg-slate-50 text-slate-700 shadow-sm transition" title="View Academic CV in browser modal">
+          <i data-lucide="file-text" class="w-4 h-4 text-sky-600"></i>
+          <span>View CV</span>
+        </button>
+
+        <!-- Contact Link -->
+        <a href="#contact" 
+           class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-sky-100/80 hover:bg-sky-100 text-sky-800 shadow-sm transition" title="Contact Harshith Reddy Madireddy">
+          <i data-lucide="mail" class="w-4 h-4 text-sky-600"></i>
+          <span>Contact</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileNavToggle" aria-label="Open mobile navigation" class="lg:hidden p-2 rounded-xl bg-white text-slate-700 shadow-sm">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavDrawer" class="hidden lg:hidden px-4 py-3 bg-white text-xs font-mono space-y-1.5 shadow-xl max-h-[75vh] overflow-y-auto">
+      <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider px-2 pt-1 pb-1">Dossier Navigation</div>
+      <a href="#home" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">01. Academic Identity</a>
+      <a href="#research" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">02. Research Trajectory</a>
+      <a href="#featured-research" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">03. Featured Research</a>
+      <a href="#research-output" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">04. Research & Dissemination</a>
+      <a href="#experience" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">05. Experience & Systems</a>
+      <a href="#education" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">06. Education & Distinctions</a>
+      <a href="#about" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">07. About & Community</a>
+      <a href="#contact" class="mobile-flow-link block p-2 rounded-lg text-slate-700 hover:bg-slate-50">08. Contact</a>
+      <div class="pt-2">
+        <button class="view-cv-btn w-full p-2.5 rounded-xl bg-sky-50 text-sky-800 text-center font-semibold shadow-sm">View Academic CV</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       STREAMLINED 8-SECTION LAYOUT: FIXED LEFT RAIL + SCROLLABLE RIGHT CONTENT
+       ========================================================================= -->
+
+  <!-- =========================================================================
+       FIXED LEFT SIDEBAR: UNCONFINED VERTICAL SCIENTIFIC TIMELINE SPINE
+       Spans viewport height freely on canvas with smooth vertical line fill
+       ========================================================================= -->
+  <aside class="hidden lg:flex fixed-left-rail flex-col justify-between" aria-label="MS/PhD Dossier Flow Navigation">
+    
+    <!-- Top Telemetry Header (Unconfined, pure canvas) -->
+    <div class="rail-header pb-2">
+      <div class="flex items-center justify-between text-xs font-mono">
+        <span class="flex items-center gap-2 text-slate-500 font-semibold tracking-wider uppercase text-[11px]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-600"></span>
+          </span>
+          <span>Research Dossier</span>
+        </span>
+        <span class="font-mono text-[10px] text-sky-700 font-bold px-2 py-0.5 rounded-full bg-sky-100/70">
+          8 Sections
+        </span>
+      </div>
+      <div class="text-[11px] text-slate-400 font-mono mt-1">Direct MS/PhD dossier navigation</div>
+    </div>
+
+    <!-- The Vertical Scientific Timeline Spine (Evenly distributed down viewport) -->
+    <nav class="rail-timeline-container relative flex-1 flex flex-col justify-between py-3 my-1" aria-label="Dossier Section Timeline">
+      <!-- Background Guide Track Line with Dynamic Fill (Clean smooth line, no dot) -->
+      <div class="rail-timeline-track overflow-hidden">
+        <div id="railTimelineFill" class="rail-timeline-fill"></div>
+      </div>
+
+      <!-- 8 Milestone Flow Links (Unconfined milestones) -->
+      <a href="#home" class="left-flow-link active group" data-step="01">
+        <div class="milestone-marker">
+          <span>01</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Academic Identity</span>
+          <span class="milestone-sub">Overview & Interests</span>
+        </div>
+      </a>
+
+      <a href="#research" class="left-flow-link group" data-step="02">
+        <div class="milestone-marker">
+          <span>02</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Research Trajectory</span>
+          <span class="milestone-sub">Themes & Future</span>
+        </div>
+      </a>
+
+      <a href="#featured-research" class="left-flow-link group" data-step="03">
+        <div class="milestone-marker">
+          <span>03</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Featured Research</span>
+          <span class="milestone-sub">ODEs & Wavelet IDS</span>
+        </div>
+      </a>
+
+      <a href="#research-output" class="left-flow-link group" data-step="04">
+        <div class="milestone-marker">
+          <span>04</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Research & Dissemination</span>
+          <span class="milestone-sub">INEX · IIT Dhanbad · FTCCI</span>
+        </div>
+      </a>
+
+      <a href="#experience" class="left-flow-link group" data-step="05">
+        <div class="milestone-marker">
+          <span>05</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Experience & Systems</span>
+          <span class="milestone-sub">Industry & Applied AI</span>
+        </div>
+      </a>
+
+      <a href="#education" class="left-flow-link group" data-step="06">
+        <div class="milestone-marker">
+          <span>06</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Education & Distinctions</span>
+          <span class="milestone-sub">VNR VJIET · Certs · Honors</span>
+        </div>
+      </a>
+
+      <a href="#about" class="left-flow-link group" data-step="07">
+        <div class="milestone-marker">
+          <span>07</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">About & Community</span>
+          <span class="milestone-sub">Narrative & Leadership</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="left-flow-link group" data-step="08">
+        <div class="milestone-marker">
+          <span>08</span>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-title">Contact</span>
+          <span class="milestone-sub">Academic & Research Connections</span>
+        </div>
+      </a>
+    </nav>
+
+    <!-- Bottom Unconfined Academic Status & Direct Actions -->
+    <div class="rail-footer pt-2 space-y-2.5">
+      <!-- Live Applicant Status Badge -->
+      <div class="flex items-center gap-2.5 px-3 py-2 rounded-2xl bg-sky-50/80 text-sky-900 text-xs font-mono shadow-sm">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-600"></span>
+        </span>
+        <span class="font-bold text-[11px] tracking-wider uppercase">FALL 2027 MS/PHD APPLICANT</span>
+      </div>
+
+      <!-- Official Academic CV Action -->
+      <a href="assets/documents/Harshith_Reddy_Madireddy_Academic_CV.pdf?v=20260925_140" download="Harshith_Reddy_Madireddy_Academic_CV.pdf" target="_blank" rel="noopener noreferrer"
+         class="group flex items-center justify-between w-full px-3.5 py-2.5 rounded-2xl bg-white hover:bg-sky-50 text-slate-700 hover:text-sky-800 text-xs font-mono font-semibold shadow-sm transition-all duration-200" title="Download Official Academic CV (PDF)">
+        <span class="flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-sky-600 group-hover:scale-110 transition"></i>
+          <span>Official Academic CV (PDF)</span>
+        </span>
+        <i data-lucide="download" class="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-700 transition"></i>
+      </a>
+    </div>
+
+  </aside>
+
+  <!-- =========================================================================
+       RIGHT AREA: 8 STREAMLINED RESEARCH DOSSIER SECTIONS (Point 28 Disciplined Widths)
+       ========================================================================= -->
+  <div class="w-full lg:pl-[290px] min-h-screen">
+    <main class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 py-4 lg:py-6 space-y-8 sm:space-y-12">
+
+      <!-- ===================================================================
+           01 — HOME: ACADEMIC IDENTITY
+           =================================================================== -->
+      <section id="home" class="pt-2 relative reveal-on-scroll space-y-6">
+        <!-- Hero Editorial Identity + Academic Portrait Card -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Left Column: Editorial Identity -->
+          <div class="lg:col-span-8 space-y-4">
+            <div class="text-xs font-mono tracking-wider uppercase text-sky-800 font-bold">
+              01 — Academic Identity · Preparing for Fall 2027 MS/PhD Applications
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-[1.12]">
+              Engineering mathematically grounded, reliable intelligent systems.
+            </h1>
+
+            <p class="editorial-lead text-slate-700 text-base sm:text-lg leading-relaxed">
+              AI/ML researcher and engineer investigating mathematically grounded machine learning, dynamical systems, and explainable intelligent architectures.
+            </p>
+
+            <!-- Focus areas row: clean text with dot separators, NO PILLS -->
+            <div class="meta-dot-row text-xs sm:text-sm font-mono text-slate-600 pt-1">
+              <span class="meta-dot-item font-semibold text-slate-900">Machine Learning</span>
+              <span class="meta-dot-item font-semibold text-slate-900">Cybersecurity</span>
+              <span class="meta-dot-item font-semibold text-slate-900">Explainable AI</span>
+              <span class="meta-dot-item font-semibold text-slate-900">Intelligent Systems</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#research" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-sky-600 hover:bg-sky-500 text-white transition shadow-sm">
+                <span>Explore Research</span>
+                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+
+              <button class="view-cv-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-semibold bg-white hover:bg-slate-50 text-slate-700 border border-slate-200/80 shadow-sm transition">
+                <i data-lucide="file-text" class="w-4 h-4 text-sky-600"></i>
+                <span>Academic CV</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Academic Portrait Card -->
+          <div class="lg:col-span-4 flex flex-col items-center sm:items-start lg:items-center">
+            <div class="w-40 h-40 sm:w-48 sm:h-48 lg:w-52 lg:h-52 rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 bg-slate-50 p-1">
+              <img id="applicantPhoto" 
+                   src="assets/images/PF.jpg" 
+                   alt="Harshith Reddy Madireddy" 
+                   class="w-full h-full object-cover object-center rounded-xl"
+                   onerror="this.onerror=null; this.src='assets/images/profile.svg';">
+            </div>
+            <div class="text-center mt-2.5">
+              <span class="text-xs font-mono font-semibold text-slate-800 block applicant-name">Harshith Reddy Madireddy</span>
+              <span class="text-[11px] font-mono font-semibold text-slate-600 uppercase tracking-wider">FALL 2027 MS/PHD APPLICANT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Snapshot: Clean Two-Metric Split Card (NO GLOW) -->
+        <div id="academicSnapshotContainer" class="pt-2">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           02 — RESEARCH TRAJECTORY & THEMES (SPLIT LAYOUT)
+           =================================================================== -->
+      <section id="research" class="space-y-4 sm:space-y-6 relative reveal-on-scroll">
+        <div class="space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            02 — Research Trajectory · Research Trajectory & Vision
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+            Research Trajectory & Themes
+          </h2>
+          <p class="text-base sm:text-lg text-slate-700 font-serif italic max-w-3xl leading-relaxed">
+            Investigating the intersection of continuous dynamical systems, explainable representations, and reliable machine learning.
+          </p>
+        </div>
+
+        <!-- Split Layout: Selectable Themes (Left) + Fixed Detail Panel (Right) -->
+        <div id="researchTrajectorySplit" class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch pt-1">
+          <!-- Left Column (5/12): 3 Selectable Themes -->
+          <div id="trajectoryThemeList" class="lg:col-span-5 flex flex-col gap-3" role="tablist">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Right Column (7/12): Fixed Research Detail Panel -->
+          <div id="trajectoryDetailPanel" class="lg:col-span-7 p-6 sm:p-7 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between" role="tabpanel">
+            <!-- Rendered dynamically on theme select -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           03 — FEATURED RESEARCH INVESTIGATIONS & LABORATORY
+           =================================================================== -->
+      <section id="featured-research" class="space-y-4 sm:space-y-6 relative reveal-on-scroll">
+        <div class="space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            03 — Featured Research · Undergraduate Investigations & Interactive Exhibits
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+            Featured Research
+          </h2>
+          <p class="text-base sm:text-lg text-slate-700 font-serif italic max-w-3xl leading-relaxed">
+            Two complementary undergraduate investigations exploring spatial representations and continuous dynamics for network security.
+          </p>
+        </div>
+
+        <!-- Unified Research Viewer Laboratory -->
+        <div id="featuredResearchContainer" class="w-full">
+          <!-- Rendered dynamically by main.js and research-pipeline.js -->
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           04 — RESEARCH & DISSEMINATION
+           =================================================================== -->
+      <section id="research-output" class="space-y-4 sm:space-y-5 relative reveal-on-scroll">
+        <div class="relative space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            04 — Research & Dissemination · Academic Dissemination
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight">Research & Dissemination</h2>
+          <p class="text-base text-slate-600 font-serif italic">
+            Research presentations, innovation exhibitions, and manuscript in preparation.
+          </p>
+        </div>
+
+        <!-- Full-Width Unified Research & Dissemination Showcase -->
+        <div id="researchOutputContainer" class="w-full space-y-5">
+          <!-- Rendered dynamically as static vertical academic timeline -->
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           05 — EXPERIENCE & SYSTEMS
+           =================================================================== -->
+      <section id="experience" class="space-y-4 sm:space-y-5 relative reveal-on-scroll">
+        <div class="relative space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            05 — Experience & Systems · Industry Experience & Applied Systems
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight">Experience & Applied Systems</h2>
+          <p class="text-base sm:text-lg text-slate-700 font-serif italic max-w-3xl leading-relaxed">
+            Applied AI engineering across regulatory technology, fintech intelligence, and software systems.
+          </p>
+        </div>
+
+        <!-- Industry Experience List -->
+        <div id="experienceListContainer" class="space-y-4">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Applied Engineering Projects (CypherDocs & Social Media Hub) -->
+        <div class="space-y-3 pt-1">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-sky-800 uppercase tracking-wider font-bold">Applied Software Engineering & Microservices</span>
+            <span class="text-slate-500 font-serif italic">Systems & Artifacts</span>
+          </div>
+          <div id="appliedProjectsContainer" class="w-full">
+            <!-- Rendered dynamically as static stacked/grid cards -->
+          </div>
+        </div>
+
+        <!-- Curated Technical Stack (Languages, ML Frameworks, Infrastructure, Math Methods) -->
+        <div class="space-y-3 pt-1">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="font-bold text-slate-700 uppercase tracking-wider">Curated Technical & Mathematical Stack</span>
+            <span class="text-slate-500 font-serif italic">Core tools used in research & engineering</span>
+          </div>
+          <div id="technicalStackContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           06 — EDUCATION & DISTINCTIONS
+           =================================================================== -->
+      <section id="education" class="space-y-4 sm:space-y-5 relative reveal-on-scroll">
+        <div class="relative space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            06 — Education & Distinctions · Scholastic Credentials & Distinctions
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight">Education & Distinctions</h2>
+          <p class="text-base text-slate-600 font-serif italic">
+            Formal undergraduate degree, verified professional certifications, scholastic olympiads, and university athletic honors.
+          </p>
+        </div>
+
+        <!-- Unified Education & Distinctions Container -->
+        <div id="educationContainer" class="w-full space-y-5">
+          <!-- Rendered dynamically: Degree card, 3 cert rows, 2x2 distinctions grid -->
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           07 — ABOUT & COMMUNITY
+           =================================================================== -->
+      <section id="about" class="space-y-4 sm:space-y-5 relative reveal-on-scroll">
+        <div class="relative space-y-2">
+          <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+            07 — About & Community · Personal Narrative & Leadership
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-slate-900 tracking-tight">About & Community</h2>
+        </div>
+
+        <div class="space-y-4">
+          <div id="aboutTextContainer">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- BEYOND RESEARCH Sub-Section (Community Leadership) -->
+          <div class="pt-1 space-y-2.5">
+            <div class="text-xs font-mono uppercase tracking-wider text-sky-700 font-bold">
+              Community Leadership
+            </div>
+            <div id="beyondResearchContainer">
+              <!-- Rendered dynamically: Hussaini Welfare Association -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Fading Editorial Divider -->
+      <hr class="editorial-rule" />
+
+      <!-- ===================================================================
+           08 — CONTACT: ACADEMIC ACTION PANEL (Point 21)
+           =================================================================== -->
+      <section id="contact" class="pt-6 pb-12 relative reveal-on-scroll">
+        <div class="p-8 sm:p-12 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-7 text-center max-w-3xl mx-auto">
+          <div class="space-y-2.5">
+            <div class="text-xs font-mono text-sky-800 font-bold uppercase tracking-wider">
+              08 — Contact · Academic & Research Connections
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">Let's Connect</h2>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-semibold mx-auto">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-600"></i>
+              <span>Hyderabad, India · Fall 2027 MS/PhD Applicant</span>
+            </div>
+            <p class="text-sm sm:text-base text-slate-700 max-w-xl mx-auto leading-relaxed font-sans font-medium reading-width">
+              I am preparing for Fall 2027 MS/PhD study focused on mathematically grounded, reliable, and explainable intelligent systems.
+            </p>
+          </div>
+
+          <!-- Primary Action Row: Email Me + Copy Email -->
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <a href="mailto:harshithreddymadireddy1@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Email Me</span>
+            </a>
+            <button id="copyEmailBtn" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-mono text-xs sm:text-sm font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 transition cursor-pointer" title="Copy email address to clipboard">
+              <i data-lucide="copy" class="w-4 h-4 text-slate-500" id="copyEmailIcon"></i>
+              <span id="copyEmailText">Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Academic & Professional Profiles Row -->
+          <div class="pt-2 border-t border-slate-100">
+            <div class="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-3 font-semibold">
+              Scholarly & Professional Profiles
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+              <a href="https://github.com/harshithreddymadireddy" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-50 hover:bg-sky-50 text-slate-700 hover:text-sky-900 border border-slate-200/70 transition flex items-center justify-center gap-2 font-semibold">
+                <i data-lucide="github" class="w-4 h-4 text-slate-700"></i>
+                <span>GitHub (Code & Repositories)</span>
+              </a>
+              <a href="https://www.linkedin.com/in/harshith-reddy-madireddy" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-slate-50 hover:bg-sky-50 text-slate-700 hover:text-sky-900 border border-slate-200/70 transition flex items-center justify-center gap-2 font-semibold">
+                <i data-lucide="linkedin" class="w-4 h-4 text-sky-700"></i>
+                <span>LinkedIn (Professional Network)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Academic CV Action (Centered in Box) -->
+          <div class="pt-1 flex flex-wrap items-center justify-center gap-3">
+            <button class="view-cv-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-mono text-xs font-semibold bg-white hover:bg-slate-50 text-sky-800 border border-slate-200/80 shadow-sm transition" title="Preview Academic CV in browser modal">
+              <i data-lucide="eye" class="w-4 h-4 text-sky-600"></i>
+              <span>View Academic CV</span>
+            </button>
+            <a href="assets/documents/Harshith_Reddy_Madireddy_Academic_CV.pdf?v=20260925_140" download="Harshith_Reddy_Madireddy_Academic_CV.pdf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-mono text-xs font-semibold bg-sky-600 hover:bg-sky-700 text-white shadow-sm transition" title="Download Official Academic CV (PDF)">
+              <i data-lucide="download" class="w-4 h-4 text-white"></i>
+              <span>Download PDF</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER (Point 28 Disciplined Widths)
+       ========================================================================= -->
+  <footer class="w-full lg:pl-[290px] py-6 text-xs font-mono text-slate-500 no-print mt-10">
+    <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © <span id="footerYear"></span> <span id="footerName" class="text-slate-700 font-semibold">Harshith Reddy Madireddy</span> • AI Developer & Researcher
+      </div>
+      <div class="flex items-center gap-3">
+        <span>Built with research, mathematics, and code.</span>
+        <span>•</span>
+        <a href="#home" class="text-sky-700 hover:underline">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       PERSISTENT CV MODAL / IN-BROWSER PREVIEW
+       ========================================================================= -->
+  <div id="cvModal" class="fixed inset-0 z-50 hidden bg-slate-900/30 backdrop-blur-sm items-center justify-center p-4">
+    <div class="research-card max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden bg-white">
+      <div class="flex items-center justify-between p-4 bg-slate-50/80">
+        <div class="flex items-center gap-2 text-sm font-mono text-sky-800 font-semibold">
+          <i data-lucide="file-text" class="w-4 h-4 text-sky-600"></i>
+          <span>Curriculum Vitae — Harshith Reddy Madireddy</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="assets/documents/Harshith_Reddy_Madireddy_Academic_CV.pdf?v=20260925_140" download="Harshith_Reddy_Madireddy_Academic_CV.pdf" class="px-3 py-1.5 text-xs font-mono rounded-lg bg-sky-100 text-sky-800 shadow-sm transition">
+            Download PDF
+          </a>
+          <button class="close-cv-btn p-1.5 rounded-lg hover:bg-slate-200 text-slate-500 hover:text-slate-800">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="flex-1 p-6 sm:p-8 overflow-y-auto font-sans text-sm sm:text-[14.5px] text-slate-700 space-y-6 bg-white">
+        <!-- Structured In-Browser CV Preview Header -->
+        <div class="pb-3 border-b border-slate-100">
+          <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 applicant-name">Harshith Reddy Madireddy</h2>
+          <p class="text-xs sm:text-sm font-mono text-sky-800 font-semibold mt-0.5">AI/ML Researcher · Fall 2027 MS/PhD Applicant</p>
+          
+          <!-- Contact, Portfolio, GitHub, LinkedIn, Location Links -->
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1.5 pt-2.5 text-xs sm:text-sm font-mono text-slate-600">
+            <a href="mailto:harshithreddymadireddy1@gmail.com" class="inline-flex items-center gap-1.5 text-sky-700 hover:text-sky-900 font-medium transition">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-sky-600"></i>
+              <span>harshithreddymadireddy1@gmail.com</span>
+            </a>
+            <span class="text-slate-300">•</span>
+            <a href="https://harshithreddymadireddy.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-700 hover:text-sky-900 font-medium transition" title="Harshith Reddy Madireddy Research Portfolio">
+              <i data-lucide="globe" class="w-3.5 h-3.5 text-sky-600"></i>
+              <span>Portfolio</span>
+            </a>
+            <span class="text-slate-300">•</span>
+            <a href="https://github.com/harshithreddymadireddy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-700 hover:text-sky-900 font-medium transition">
+              <i data-lucide="github" class="w-3.5 h-3.5 text-slate-700"></i>
+              <span>GitHub</span>
+            </a>
+            <span class="text-slate-300">•</span>
+            <a href="https://www.linkedin.com/in/harshith-reddy-madireddy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-700 hover:text-sky-900 font-medium transition">
+              <i data-lucide="linkedin" class="w-3.5 h-3.5 text-sky-700"></i>
+              <span>LinkedIn</span>
+            </a>
+            <span class="text-slate-300">•</span>
+            <span class="inline-flex items-center gap-1 text-slate-600 font-medium">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>Hyderabad, India</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Academic Profile</h3>
+          <p class="text-xs sm:text-sm leading-relaxed text-slate-700 font-sans">
+            AI/ML researcher investigating predictive cybersecurity, continuous dynamical modeling, and explainable machine learning architectures. Awarded the INEX 2024 International Silver Medal for a 99.255% accurate 2D-wavelet spatial intrusion detection framework, and author of continuous second-order differential equation early-warning modeling presented at IIT Dhanbad. Experienced in production AI infrastructure and enterprise regulatory automation—preparing for Fall 2027 MS/PhD study.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Education</h3>
+          <div class="text-xs sm:text-sm space-y-1">
+            <div class="font-bold text-slate-900 text-sm sm:text-base">VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India (Nov 2021 – May 2025)</div>
+            <div class="text-slate-700">Bachelor of Technology, Information Technology • <strong class="text-slate-900">GPA: 8.22 / 10.0 (3.53 / 4.0)</strong></div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Awards, Presentations & Olympiad Medals</h3>
+          <ul class="text-xs sm:text-sm space-y-2 text-slate-700 leading-relaxed font-sans">
+            <li>• <strong class="text-slate-900">2nd Place · Silver Medal</strong> — India International Innovation and Invention Expo (INEX 2024), Indian Innovators Association: Awarded 2nd place among 150+ international innovators from 15+ countries for 2D wavelet transform-based spatial network intrusion detection (99.255% accuracy).</li>
+            <li>• <strong class="text-slate-900">SIPHO Physics Olympiad — National Rank 190 · Gold Medal:</strong> Recognized for competitive problem solving in physical systems, analytical mechanics, and classical dynamics.</li>
+            <li>• <strong class="text-slate-900">SIMO Mathematics Olympiad — National Rank 235 · Gold Medal:</strong> Recognized for analytical problem solving in mathematical logic, algebra, and discrete structures.</li>
+            <li>• <strong class="text-slate-900">Presented Research</strong> — “ODE+ML=EWS: Early Warning Signals for Cyber Attacks” at National Conference on Data Predictive Analytics and Numerical Simulations (DPA-NS 2025), Indian Institute of Technology (ISM) Dhanbad.</li>
+            <li>• <strong class="text-slate-900">Presented Research</strong> — “Dynamical Modeling in Network Security & Early Warning” at Industrial Innovation and Technology Expo (IITEX 2025), The Federation of Telangana Chambers of Commerce and Industry (FTCCI).</li>
+            <li>• <strong class="text-slate-900">Excellence in Community Service Award (2026):</strong> Community Service & Outreach — Recognized for sustained community service, educational outreach, and local welfare initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Industry & Research Experience</h3>
+          <div class="text-xs sm:text-sm space-y-4">
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">Pulse Platform — AI Engineer · Part-time → Full-time (August 2025 – Present, Seattle, USA · Remote)</div>
+              <div class="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
+                • Contributed to the AI signal infrastructure powering real-time market intelligence across news, social and financial data sources.<br />
+                • Worked on sentiment analysis, multi-agent consensus and dynamic risk scoring with 94% signal accuracy and up to 85% predictive reliability.<br />
+                • Built low-latency streaming workflows for real-time signal generation and delivery for 200+ users in testing/early access.
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">Thermo Fisher Scientific — Software Intern · Regulatory Affairs R&D (April 2025 – March 2026, Hyderabad, India)</div>
+              <div class="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
+                • Architected an Enterprise RAG Pipeline using LangChain and Azure OpenAI to support medical device registration across 40+ international jurisdictions, reducing manual overhead by ~90%.<br />
+                • Strengthened medical device cybersecurity through systematic threat modeling, hazard analysis, and standard operating procedures aligned with regulatory standards.
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">VNR Vignana Jyothi Institute of Engineering and Technology — Undergraduate Student Researcher (April 2024 – April 2025, Hyderabad, India)</div>
+              <div class="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
+                • Formulated a 2D-wavelet spatial intrusion detection system achieving 99.255% classification accuracy (INEX 2024 Silver Medal).<br />
+                • Investigated a second-order dynamical system formulation to characterize rate-of-change curvature anomalies in packet arrivals ~53 minutes prior to peak flood in analyzed traces.
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">IBM SkillsBuild — Web Developer Intern (June 2023 – July 2023)</div>
+              <div class="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
+                • Developed responsive full-stack web applications using React.js, Node.js, JavaScript, HTML5/CSS3, and database management systems.<br />
+                • Implemented modular user interfaces ensuring cross-platform responsiveness, managed code versioning with Git, and collaborated via agile workflows.
+              </div>
+            </div>
+            <div>
+              <div class="font-bold text-slate-900 text-sm sm:text-base">Cisco Networking Academy — Cyber Security Engineering Intern (April 2023 – May 2023)</div>
+              <div class="text-slate-700 text-xs sm:text-sm mt-1 leading-relaxed">
+                • Completed practical training in digital security operations, threat modeling, and incident response in simulated network environments.<br />
+                • Analyzed attack surfaces, network vulnerabilities, and defensive countermeasure workflows.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Key Featured Projects</h3>
+          <div class="text-xs sm:text-sm space-y-2.5 text-slate-700 leading-relaxed font-sans">
+            <div>
+              <strong class="text-slate-900">Spatial 2D-Wavelet DDoS Detection System (99.255% Accuracy):</strong> High-precision intrusion detection decomposing 58 network telemetry attributes into 8×8 spatial-frequency matrices via 2D Haar DWT and Extra Trees classifier.
+              <div class="mt-1 text-xs text-slate-600 font-mono">
+                Interactive Research System for Detection of DDoS: <a href="https://detect-ddos.onrender.com" target="_blank" rel="noopener noreferrer" class="text-sky-700 hover:text-sky-900 underline">detect-ddos.onrender.com</a>
+              </div>
+            </div>
+            <div>
+              <strong class="text-slate-900">Second-Order ODE Early Warning System (~53 min Lead Time):</strong> Continuous dynamical system harness modeling benign network rate-of-change dynamics to identify precursor velocity anomalies ~53 minutes prior to volumetric flood.
+              <div class="mt-1 text-xs text-slate-600 font-mono">
+                Interactive Research System for EWS: <a href="https://ddos-ews.onrender.com" target="_blank" rel="noopener noreferrer" class="text-sky-700 hover:text-sky-900 underline">ddos-ews.onrender.com</a>
+              </div>
+            </div>
+            <div>
+              <strong class="text-slate-900">CypherDocs - Hybrid Graph-Vector RAG Platform:</strong> Built enterprise-grade GraphRAG integrating Neo4j knowledge graphs and vector embeddings for relationship-aware semantic retrieval across unstructured documents (FastAPI, Neo4j, Gemini API, Docker).
+            </div>
+            <div>
+              <strong class="text-slate-900">Social Media Intelligence Hub:</strong> Modular pipeline combining encoder models (DistilBERT) for sentiment classification and generative LLMs (GPT-2) for automated summarization (FastAPI, Hugging Face, PyTorch).
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Professional Certifications & Credentials</h3>
+          <ul class="text-xs sm:text-sm space-y-1.5 text-slate-700 leading-relaxed font-sans">
+            <li>• <strong class="text-slate-900">Microsoft Azure AI Essentials Professional Certificate</strong> — Microsoft (2025)</li>
+            <li>• <strong class="text-slate-900">Data Science Professional Certificate</strong> — KNIME (2025)</li>
+            <li>• <strong class="text-slate-900">Supervised Machine Learning: Regression and Classification</strong> — DeepLearning.AI (2024)</li>
+            <li>• <strong class="text-slate-900">Docker Foundations Professional Certificate</strong> — Docker, Inc. (2025)</li>
+            <li>• <strong class="text-slate-900">Prompt Engineering and Programming with OpenAI</strong> — Columbia+ (2025)</li>
+            <li>• <strong class="text-slate-900">Public Speaking Skills Professional Certificate</strong> — Toastmasters International (2025)</li>
+            <li>• <strong class="text-slate-900">Agile Virtual Experience Program</strong> — JPMorgan Chase & Co. (2023)</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Athletics & Sports Contributions</h3>
+          <ul class="text-xs sm:text-sm space-y-1.5 text-slate-700 leading-relaxed font-sans">
+            <li>• <strong class="text-slate-900">University Badminton:</strong> First Place · Gold Medal (Inter-university Doubles Champion).</li>
+            <li>• <strong class="text-slate-900">Inter-School Kabaddi Competition:</strong> First Place · Gold Medal (Team Captain).</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Volunteer Experience & Community Leadership</h3>
+          <div class="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+            <strong class="text-slate-900">Hussaini Welfare Association</strong> — Education & Outreach Lead (Pro Bono, June 2020 – Present): Led sustained education and community initiatives across mentorship, healthcare, and environmental programs, mentoring 15 students over four consecutive years, coordinating health camps serving 200+ residents, and mobilizing 20+ volunteers for environmental initiatives.
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-sky-800 font-bold border-b border-slate-100 pb-1.5">Technical Skills</h3>
+          <ul class="text-xs sm:text-sm space-y-1.5 text-slate-700 leading-relaxed font-sans">
+            <li>• <strong class="text-slate-900">Core Languages:</strong> Python, C++, SQL, JavaScript</li>
+            <li>• <strong class="text-slate-900">ML & Application Frameworks:</strong> PyTorch, Scikit-learn, Hugging Face, LangChain, FastAPI</li>
+            <li>• <strong class="text-slate-900">Data & Systems Infrastructure:</strong> Neo4j (Cypher), Docker, Azure OpenAI, Git / CI/CD</li>
+            <li>• <strong class="text-slate-900">Mathematical & Analytical Methods:</strong> Differential Equations, Dynamical Systems, Wavelet Transforms, Numerical Simulation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/portfolio-data.js?v=20260925_119"></script>
+  <script src="js/research-pipeline.js?v=20260925_119"></script>
+  <script src="js/main.js?v=20260925_119"></script>
+</body>
+</html>

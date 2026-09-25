@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae — Harshith Reddy Madireddy</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 1in;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11px;
+      line-height: 1.30;
+      color: #1e293b;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+    @media screen {
+      body {
+        max-width: 8.5in;
+        margin: 20px auto;
+        padding: 1in;
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+    }
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+      }
+    }
+    a {
+      color: #0369a1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid #0f172a;
+    }
+    .name {
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #0369a1;
+      margin-top: 2px;
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+      font-size: 11px;
+      color: #475569;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .contact-bar span.sep {
+      color: #cbd5e1;
+    }
+    .section {
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0369a1;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    .section-content {
+      padding-left: 1px;
+    }
+    p.profile-text {
+      text-align: justify;
+      color: #334155;
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .item {
+      margin-bottom: 5px;
+      page-break-inside: avoid;
+    }
+    .item:last-child {
+      margin-bottom: 0;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .item-subtitle {
+      font-size: 11px;
+      color: #334155;
+      margin-top: 1px;
+    }
+    ul.cv-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 2px;
+    }
+    ul.cv-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3px;
+      font-size: 11px;
+      color: #334155;
+      line-height: 1.35;
+    }
+    ul.cv-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      color: #64748b;
+      font-weight: bold;
+    }
+    .strong-title {
+      color: #0f172a;
+      font-weight: 600;
+    }
+    .project-link {
+      margin-top: 2px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10.5px;
+      color: #475569;
+    }
+    .project-link a {
+      color: #0369a1;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="name">Harshith Reddy Madireddy</h1>
+    <div class="title">AI/ML Researcher · Fall 2027 MS/PhD Applicant</div>
+    <div class="contact-bar">
+      <span><a href="mailto:harshithreddymadireddy1@gmail.com">harshithreddymadireddy1@gmail.com</a></span>
+      <span class="sep">•</span>
+      <span><a href="https://harshithreddymadireddy.github.io/portfolio/" target="_blank">Portfolio</a></span>
+      <span class="sep">•</span>
+      <span><a href="https://github.com/harshithreddymadireddy" target="_blank">GitHub</a></span>
+      <span class="sep">•</span>
+      <span><a href="https://www.linkedin.com/in/harshith-reddy-madireddy" target="_blank">LinkedIn</a></span>
+      <span class="sep">•</span>
+      <span>Hyderabad, India</span>
+    </div>
+  </header>
+
+  <!-- ACADEMIC PROFILE -->
+  <section class="section">
+    <div class="section-title">Academic Profile</div>
+    <div class="section-content">
+      <p class="profile-text">
+        AI/ML researcher investigating predictive cybersecurity, continuous dynamical modeling, and explainable machine learning architectures. Awarded the INEX 2024 International Silver Medal for a 99.255% accurate 2D-wavelet spatial intrusion detection framework, and author of continuous second-order differential equation early-warning modeling presented at IIT Dhanbad. Experienced in production AI infrastructure and enterprise regulatory automation—preparing for Fall 2027 MS/PhD study.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <div class="section-title">Education</div>
+    <div class="section-content">
+      <div class="item">
+        <div class="item-header">
+          <span>VNR Vignana Jyothi Institute of Engineering and Technology, Hyderabad, India (Nov 2021 – May 2025)</span>
+        </div>
+        <div class="item-subtitle">
+          Bachelor of Technology, Information Technology • <strong class="strong-title">GPA: 8.22 / 10.0 (3.53 / 4.0)</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS, PRESENTATIONS & OLYMPIAD MEDALS -->
+  <section class="section">
+    <div class="section-title">Awards, Presentations &amp; Olympiad Medals</div>
+    <div class="section-content">
+      <ul class="cv-list">
+        <li><strong class="strong-title">2nd Place · Silver Medal</strong> — India International Innovation and Invention Expo (INEX 2024), Indian Innovators Association: Awarded 2nd place among 150+ international innovators from 15+ countries for 2D wavelet transform-based spatial network intrusion detection (99.255% accuracy).</li>
+        <li><strong class="strong-title">SIPHO Physics Olympiad — National Rank 190 · Gold Medal:</strong> Recognized for competitive problem solving in physical systems, analytical mechanics, and classical dynamics.</li>
+        <li><strong class="strong-title">SIMO Mathematics Olympiad — National Rank 235 · Gold Medal:</strong> Recognized for analytical problem solving in mathematical logic, algebra, and discrete structures.</li>
+        <li><strong class="strong-title">Presented Research</strong> — “ODE+ML=EWS: Early Warning Signals for Cyber Attacks” at National Conference on Data Predictive Analytics and Numerical Simulations (DPA-NS 2025), Indian Institute of Technology (ISM) Dhanbad.</li>
+        <li><strong class="strong-title">Presented Research</strong> — “Dynamical Modeling in Network Security &amp; Early Warning” at Industrial Innovation and Technology Expo (IITEX 2025), The Federation of Telangana Chambers of Commerce and Industry (FTCCI).</li>
+        <li><strong class="strong-title">Excellence in Community Service Award (2026):</strong> Community Service &amp; Outreach — Recognized for sustained community service, educational outreach, and local welfare initiatives.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INDUSTRY & RESEARCH EXPERIENCE -->
+  <section class="section">
+    <div class="section-title">Industry &amp; Research Experience</div>
+    <div class="section-content">
+
+      <div class="item">
+        <div class="item-header">
+          <span>Pulse Platform — AI Engineer · Part-time → Full-time (August 2025 – Present, Seattle, USA · Remote)</span>
+        </div>
+        <ul class="cv-list">
+          <li>Contributed to the AI signal infrastructure powering real-time market intelligence across news, social and financial data sources.</li>
+          <li>Worked on sentiment analysis, multi-agent consensus and dynamic risk scoring with 94% signal accuracy and up to 85% predictive reliability.</li>
+          <li>Built low-latency streaming workflows for real-time signal generation and delivery for 200+ users in testing/early access.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Thermo Fisher Scientific — Software Intern · Regulatory Affairs R&amp;D (April 2025 – March 2026, Hyderabad, India)</span>
+        </div>
+        <ul class="cv-list">
+          <li>Architected an Enterprise RAG Pipeline using LangChain and Azure OpenAI to support medical device registration across 40+ international jurisdictions, reducing manual overhead by ~90%.</li>
+          <li>Strengthened medical device cybersecurity through systematic threat modeling, hazard analysis, and standard operating procedures aligned with regulatory standards.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>VNR Vignana Jyothi Institute of Engineering and Technology — Undergraduate Student Researcher (April 2024 – April 2025, Hyderabad, India)</span>
+        </div>
+        <ul class="cv-list">
+          <li>Formulated a 2D-wavelet spatial intrusion detection system achieving 99.255% classification accuracy (INEX 2024 Silver Medal).</li>
+          <li>Investigated a second-order dynamical system formulation to characterize rate-of-change curvature anomalies in packet arrivals ~53 minutes prior to peak flood in analyzed traces.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>IBM SkillsBuild — Web Developer Intern (June 2023 – July 2023)</span>
+        </div>
+        <ul class="cv-list">
+          <li>Developed responsive full-stack web applications using React.js, Node.js, JavaScript, HTML5/CSS3, and database management systems.</li>
+          <li>Implemented modular user interfaces ensuring cross-platform responsiveness, managed code versioning with Git, and collaborated via agile workflows.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Cisco Networking Academy — Cyber Security Engineering Intern (April 2023 – May 2023)</span>
+        </div>
+        <ul class="cv-list">
+          <li>Completed practical training in digital security operations, threat modeling, and incident response in simulated network environments.</li>
+          <li>Analyzed attack surfaces, network vulnerabilities, and defensive countermeasure workflows.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KEY FEATURED PROJECTS -->
+  <section class="section">
+    <div class="section-title">Key Featured Projects</div>
+    <div class="section-content">
+      <ul class="cv-list">
+        <li>
+          <strong class="strong-title">Spatial 2D-Wavelet DDoS Detection System (99.255% Accuracy):</strong> High-precision intrusion detection decomposing 58 network telemetry attributes into 8×8 spatial-frequency matrices via 2D Haar DWT and Extra Trees classifier.
+          <div class="project-link">Interactive Research System for Detection of DDoS: <a href="https://detect-ddos.onrender.com" target="_blank">detect-ddos.onrender.com</a></div>
+        </li>
+        <li>
+          <strong class="strong-title">Second-Order ODE Early Warning System (~53 min Lead Time):</strong> Continuous dynamical system harness modeling benign network rate-of-change dynamics to identify precursor velocity anomalies ~53 minutes prior to volumetric flood.
+          <div class="project-link">Interactive Research System for EWS: <a href="https://ddos-ews.onrender.com" target="_blank">ddos-ews.onrender.com</a></div>
+        </li>
+        <li>
+          <strong class="strong-title">CypherDocs - Hybrid Graph-Vector RAG Platform:</strong> Built enterprise-grade GraphRAG integrating Neo4j knowledge graphs and vector embeddings for relationship-aware semantic retrieval across unstructured documents (FastAPI, Neo4j, Gemini API, Docker).
+        </li>
+        <li>
+          <strong class="strong-title">Social Media Intelligence Hub:</strong> Modular pipeline combining encoder models (DistilBERT) for sentiment classification and generative LLMs (GPT-2) for automated summarization (FastAPI, Hugging Face, PyTorch).
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL CERTIFICATIONS & CREDENTIALS -->
+  <section class="section">
+    <div class="section-title">Professional Certifications &amp; Credentials</div>
+    <div class="section-content">
+      <ul class="cv-list">
+        <li><strong class="strong-title">Microsoft Azure AI Essentials Professional Certificate</strong> — Microsoft (2025)</li>
+        <li><strong class="strong-title">Data Science Professional Certificate</strong> — KNIME (2025)</li>
+        <li><strong class="strong-title">Supervised Machine Learning: Regression and Classification</strong> — DeepLearning.AI (2024)</li>
+        <li><strong class="strong-title">Docker Foundations Professional Certificate</strong> — Docker, Inc. (2025)</li>
+        <li><strong class="strong-title">Prompt Engineering and Programming with OpenAI</strong> — Columbia+ (2025)</li>
+        <li><strong class="strong-title">Public Speaking Skills Professional Certificate</strong> — Toastmasters International (2025)</li>
+        <li><strong class="strong-title">Agile Virtual Experience Program</strong> — JPMorgan Chase &amp; Co. (2023)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ATHLETICS & SPORTS CONTRIBUTIONS -->
+  <section class="section">
+    <div class="section-title">Athletics &amp; Sports Contributions</div>
+    <div class="section-content">
+      <ul class="cv-list">
+        <li><strong class="strong-title">University Badminton:</strong> First Place · Gold Medal (Inter-university Doubles Champion).</li>
+        <li><strong class="strong-title">Inter-School Kabaddi Competition:</strong> First Place · Gold Medal (Team Captain).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER EXPERIENCE & COMMUNITY LEADERSHIP -->
+  <section class="section">
+    <div class="section-title">Volunteer Experience &amp; Community Leadership</div>
+    <div class="section-content">
+      <div class="item">
+        <p class="profile-text">
+          <strong class="strong-title">Hussaini Welfare Association</strong> — Education &amp; Outreach Lead (Pro Bono, June 2020 – Present): Led sustained education and community initiatives across mentorship, healthcare, and environmental programs, mentoring 15 students over four consecutive years, coordinating health camps serving 200+ residents, and mobilizing 20+ volunteers for environmental initiatives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section class="section" style="margin-bottom: 0;">
+    <div class="section-title">Technical Skills</div>
+    <div class="section-content">
+      <ul class="cv-list">
+        <li><strong class="strong-title">Core Languages:</strong> Python, C++, SQL, JavaScript</li>
+        <li><strong class="strong-title">ML &amp; Application Frameworks:</strong> PyTorch, Scikit-learn, Hugging Face, LangChain, FastAPI</li>
+        <li><strong class="strong-title">Data &amp; Systems Infrastructure:</strong> Neo4j (Cypher), Docker, Azure OpenAI, Git / CI/CD</li>
+        <li><strong class="strong-title">Mathematical &amp; Analytical Methods:</strong> Differential Equations, Dynamical Systems, Wavelet Transforms, Numerical Simulation</li>
+      </ul>
+    </div>
+  </section>
+
+</body>
+</html>
