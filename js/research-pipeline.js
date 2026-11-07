@@ -5,7 +5,7 @@
  * Visual, creative, and engaging interactive deep dive into Harshith Reddy's
  * two academic research projects:
  * 1. 2D Wavelet Transform Spatial IDS (INEX 2024 Silver Medal, 99.255% Accuracy)
- * 2. Early Warning System via 2nd-Order ODEs (~53 min Lead Time, Conferences)
+ * 2. Early Warning System via 2nd-Order ODEs (~83 min Lead Time, Conferences)
  * =========================================================================
  */
 
@@ -736,7 +736,7 @@
    * 01 Signals (Dual Packets/s & Bytes/s time-series)
    * 02 ODE (Observed vs ODE-modeled dynamics)
    * 03 Residual (Combined residual vs time + benign stats panel)
-   * 04 Warning (Hero stage: 3 thresholds + attack marker + observable ~53 min bracket)
+   * 04 Warning (Hero stage: 3 thresholds + attack marker + observable ~83 min bracket)
    * ========================================================================= */
   const odeStages = [
     {
@@ -979,23 +979,23 @@
       title: "Statistical Thresholding & Early Warning Horizon",
       mathContext: "Statistical Hypothesis & Horizon Metric",
       mathRole: "Early Warning Decision Rule",
-      renderedEquation: "τₖ = μ_benign + k·σ_benign  (k ∈ {1, 2, 3}), &nbsp;&nbsp;&nbsp;&nbsp; Alert: CR(t) > τ₃  ⟹  Δt_lead = t_peak − t_alert ≈ 3,200s (~53 min)",
-      desc: "Thresholds calibrated on benign traces detect anomalous residual divergence. An alert triggers when CR(t) breaches μ + 3σ, achieving ≈53 min lead time prior to observed volumetric peak.",
-      outcomeText: "Statistical threshold breach providing proactive precursor alert ≈53 min before volumetric attack saturation.",
+      renderedEquation: "τₖ = μ_benign + k·σ_benign  (k ∈ {1, 2, 3}), &nbsp;&nbsp;&nbsp;&nbsp; Alert: CR(t) > τ₃  ⟹  Δt_lead = t_peak − t_alert ≈ 5,000s (~83 min)",
+      desc: "Thresholds calibrated on benign traces detect anomalous residual divergence. An alert triggers when CR(t) breaches μ + 3σ, achieving ≈83 min lead time on testing data prior to observed volumetric peak (calibrated from 53 min on training data).",
+      outcomeText: "Statistical threshold breach providing proactive precursor alert ≈83 min before volumetric attack saturation on testing data.",
       outcomeFlow: `
         <div class="flex items-center gap-1.5 flex-wrap sm:flex-nowrap">
           <span class="px-2 py-1 rounded bg-white border border-slate-200 text-slate-700 font-semibold shrink-0">CR(t) > μ + 3σ</span>
           <span class="text-slate-400 font-bold">→</span>
-          <span class="px-2 py-1 rounded bg-amber-100 border border-amber-300 text-amber-900 font-semibold shrink-0">PRECURSOR ALERT (t ≈ -3,200s)</span>
+          <span class="px-2 py-1 rounded bg-amber-100 border border-amber-300 text-amber-900 font-semibold shrink-0">PRECURSOR ALERT (t ≈ -5,000s)</span>
           <span class="text-slate-400 font-bold">→</span>
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border-2 border-amber-400 text-amber-950 font-mono font-bold shrink-0 shadow-2xs"><span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>≈53 MIN ADVANCE WARNING</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border-2 border-amber-400 text-amber-950 font-mono font-bold shrink-0 shadow-2xs"><span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>≈83 MIN ADVANCE WARNING</span>
         </div>
       `,
       variables: [
         { symbol: "τ_k", definition: "Statistical warning thresholds", meaning: "Progressive boundaries calibrated on benign reference baseline: k ∈ {1, 2, 3} (μ+σ, μ+2σ, μ+3σ)" },
         { symbol: "t_alert", definition: "Precursor alert timestamp", meaning: "Exact moment when cumulative residual CR(t) breaches the 3σ high-warning threshold τ₃" },
         { symbol: "t_peak", definition: "Volumetric peak timestamp", meaning: "Observed peak attack traffic arrival time (reference benchmark)" },
-        { symbol: "Δt_lead", definition: "Warning lead horizon", meaning: "Proactive advance window: t_peak − t_alert ≈ 3,200s (~53 minutes)" }
+        { symbol: "Δt_lead", definition: "Warning lead horizon", meaning: "Proactive advance window on testing data: t_peak − t_alert ≈ 5,000s (~83 minutes; calibrated from 53 min on training data)" }
       ],
       leftBadge: `
         <div class="space-y-1">
@@ -1005,8 +1005,8 @@
               <span class="text-amber-800 font-bold text-[8.5px]">DPA-NS 2025 · IIT Dhanbad & FTCCI</span>
             </div>
             <div class="flex items-baseline gap-2 pt-0.5">
-              <span class="text-xl sm:text-2xl font-serif font-black text-slate-900 leading-none">≈53 min</span>
-              <span class="text-[10px] text-amber-900 font-semibold">Lead horizon before volumetric peak (t ≈ -3,200s)</span>
+              <span class="text-xl sm:text-2xl font-serif font-black text-slate-900 leading-none">≈83 min</span>
+              <span class="text-[10px] text-amber-900 font-semibold">Lead horizon before volumetric peak on testing data (t ≈ -5,000s)</span>
             </div>
           </div>
           <div class="p-1 px-2.5 rounded-lg bg-amber-50/70 border border-amber-200/80 text-[10px] font-mono text-slate-700 flex items-center justify-between">
@@ -1020,7 +1020,7 @@
           <div class="flex items-center justify-between text-slate-500 text-[10px] border-b border-slate-100 pb-1.5 shrink-0">
             <span class="font-bold text-slate-800 truncate">Residual Warning Score vs. 3 Thresholds & Attack Peak</span>
             <button id="openOdeTrajectoryModalBtn" type="button" title="View Full Trajectory Plot" class="text-amber-900 font-bold bg-amber-50 hover:bg-amber-100 px-2 py-0.5 rounded border border-amber-300 shadow-2xs shrink-0 cursor-pointer flex items-center gap-1 transition">
-              <span>~3,200s Lead Horizon</span>
+              <span>~5,000s Lead Horizon</span>
               <i data-lucide="maximize-2" class="w-2.5 h-2.5 text-amber-700"></i>
             </button>
           </div>
@@ -1047,7 +1047,7 @@
               <path d="M 130 20 L 130 10 L 430 10 L 430 20" fill="none" stroke="#d97706" stroke-width="1.5"/>
               <rect x="215" y="2" width="130" height="16" fill="#ffffff" rx="3" stroke="#fed7aa" stroke-width="1"/>
               <text x="280" y="14" font-size="8.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">
-                ⟵ ~53 min Lead Time ⟶
+                ⟵ ~83 min Lead Time ⟶
               </text>
 
               <line x1="130" y1="20" x2="130" y2="96" stroke="#d97706" stroke-width="1.25" stroke-dasharray="2 2"/>
@@ -1061,22 +1061,22 @@
               <circle cx="130" cy="35" r="7" fill="#d97706" opacity="0.25" class="animate-ping"/>
               <circle cx="130" cy="35" r="3.5" fill="#d97706"/>
               <rect x="80" y="41" width="100" height="13" rx="2" fill="#fffbeb" stroke="#fde68a" stroke-width="0.75"/>
-              <text x="130" y="50" font-size="7" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">● WARNING (t ≈ -3,200s)</text>
+              <text x="130" y="50" font-size="7" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">● WARNING (t ≈ -5,000s)</text>
 
               <circle cx="430" cy="24" r="3.5" fill="#e11d48"/>
               <rect x="375" y="30" width="95" height="13" rx="2" fill="#fff1f2" stroke="#fecdd3" stroke-width="0.75"/>
               <text x="422" y="39" font-size="7" fill="#be123c" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">● ATTACK PEAK (0s)</text>
 
-              <text x="30" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-3,600s</text>
-              <text x="130" y="110" font-size="7.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">-3,200s (Warning)</text>
-              <text x="230" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-2,000s</text>
-              <text x="330" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-1,000s</text>
+              <text x="30" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-5,400s</text>
+              <text x="130" y="110" font-size="7.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">-5,000s (Warning)</text>
+              <text x="230" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-3,000s</text>
+              <text x="330" y="110" font-size="7" fill="#94a3b8" text-anchor="middle" font-family="'IBM Plex Mono', monospace">-1,500s</text>
               <text x="430" y="110" font-size="7.5" fill="#be123c" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">0s (Peak)</text>
             </svg>
           </div>
           <div class="text-[9.5px] text-slate-500 font-sans border-t border-slate-100 pt-1.5 flex items-center justify-between shrink-0">
-            <span>Observable Precursor Detection: 3σ breach occurs 3,200s prior to attack peak</span>
-            <span class="text-amber-800 font-bold font-mono">≈53 min Lead Horizon</span>
+            <span>Observable Precursor Detection: 3σ breach occurs ~5,000s (~83 min) prior to attack peak on testing data</span>
+            <span class="text-amber-800 font-bold font-mono">≈83 min Lead Horizon</span>
           </div>
         </div>
       `
@@ -1260,7 +1260,7 @@
                   <path d="M 145 22 L 145 14 L 470 14 L 470 22" fill="none" stroke="#d97706" stroke-width="1.5" />
                   <rect x="235" y="6" width="150" height="16" fill="#ffffff" rx="3" stroke="#fed7aa" stroke-width="1" />
                   <text x="310" y="18" font-size="8.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">
-                    ⟵ ~3,200s (~53 min) Lead Time ⟶
+                    ⟵ ~5,000s (~83 min) Lead Time ⟶
                   </text>
 
                   <!-- Area under curve -->
@@ -1287,10 +1287,10 @@
                   </text>
 
                   <!-- X-Axis Labels -->
-                  <text x="70" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-3,600s</text>
-                  <text x="145" y="164" font-size="8.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">-3,200s (Precursor)</text>
-                  <text x="260" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-2,000s</text>
-                  <text x="365" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-1,000s</text>
+                  <text x="70" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-5,400s</text>
+                  <text x="145" y="164" font-size="8.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">-5,000s (Precursor)</text>
+                  <text x="260" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-3,000s</text>
+                  <text x="365" y="164" font-size="8" fill="#64748b" font-family="'IBM Plex Mono', monospace" text-anchor="middle">-1,500s</text>
                   <text x="470" y="164" font-size="8.5" fill="#be123c" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">0s (Peak)</text>
                   <text x="280" y="180" font-size="8" fill="#475569" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">
                     Time (seconds before observed volumetric peak)
@@ -1300,7 +1300,7 @@
                   <circle cx="145" cy="138" r="4" fill="#d97706" />
                   <circle cx="145" cy="138" r="7" fill="#d97706" opacity="0.25" />
                   <text x="145" y="127" font-size="7.5" fill="#b45309" font-family="'IBM Plex Mono', monospace" font-weight="bold" text-anchor="middle">
-                    Precursor Alert (t ≈ -3,200s)
+                    Precursor Alert (t ≈ -5,000s)
                   </text>
 
                   <circle cx="470" cy="30" r="4" fill="#e11d48" />
@@ -1318,12 +1318,12 @@
               <!-- Footer Caption -->
               <div class="flex items-center justify-between text-[10px] font-mono text-slate-500 pt-1 border-t border-slate-100">
                 <span class="text-slate-700 font-semibold truncate mr-2">Empirical trace evaluated against DDoS benchmark dataset.</span>
-                <span class="text-amber-800 font-bold shrink-0">≈53 min advance warning</span>
+                <span class="text-amber-800 font-bold shrink-0">≈83 min advance warning</span>
               </div>
             </div>
 
             <div class="text-[11px] text-slate-500 font-sans leading-relaxed text-center pt-1 border-t border-slate-100">
-              The continuous second-order dynamic model captures anomalous rate-of-change curvature and residual divergence <span class="font-mono text-slate-700 font-semibold">CR(t) &gt; μ + 3σ</span> approximately 53 minutes (~3,200s) before the traffic trace reaches its volumetric attack peak.
+              The continuous second-order dynamic model captures anomalous rate-of-change curvature and residual divergence <span class="font-mono text-slate-700 font-semibold">CR(t) &gt; μ + 3σ</span> approximately 83 minutes (~5,000s) before the traffic trace reaches its volumetric attack peak on testing data (calibrated from 53 minutes on training data).
             </div>
           </div>
         `;

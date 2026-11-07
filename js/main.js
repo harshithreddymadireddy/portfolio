@@ -163,7 +163,7 @@ function renderHome(personal, selectedResults) {
     `;
   }
 
-  // Selected Research Results: 2 Core Empirical Results (Semantic Colors: Green = 99.255%, Amber = ~53 min)
+  // Selected Research Results: 2 Core Empirical Results (Semantic Colors: Green = 99.255%, Amber = ~83 min)
   const snapshotContainer = document.getElementById("academicSnapshotContainer");
   if (snapshotContainer && selectedResults) {
     const res1 = selectedResults[0] || {
@@ -172,9 +172,9 @@ function renderHome(personal, selectedResults) {
       context: "Extra Trees accuracy on 2D Haar wavelet-derived network-flow representations under 10-fold stratified cross-validation."
     };
     const res2 = selectedResults[1] || {
-      value: "~53 Min",
+      value: "~83 Min",
       label: "Observed Early-Warning Signal",
-      context: "Observed anomalous curvature approximately 3,200 seconds before the observed volumetric peak in the investigated network traffic traces."
+      context: "Observed anomalous curvature approximately 83 minutes (~5,000 seconds) prior to the observed volumetric peak on evaluated testing traffic traces (calibrated from 53 minutes on training data)."
     };
 
     snapshotContainer.innerHTML = `
@@ -469,18 +469,18 @@ function renderFeaturedResearch(projects, synthesis) {
             <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider hidden sm:inline">Investigation:</span>
             <div class="inline-flex p-0.5 rounded-xl bg-slate-100/90 border border-slate-200/80 shrink-0 gap-1" role="tablist" aria-label="Sticky Investigation Switcher">
               <!-- Tab 1: ODE -->
-              <button id="stickyTabOde" class="px-2.5 py-1 rounded-lg text-left transition cursor-pointer flex flex-col justify-center ${isOde ? 'bg-white text-amber-950 shadow-sm font-semibold ring-2 ring-amber-500' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'}" role="tab" aria-selected="${isOde}">
+              <button id="stickyTabOde" class="px-2.5 py-1 rounded-lg text-left transition transform hover:scale-105 duration-200 cursor-pointer flex flex-col justify-center ${isOde ? 'bg-white text-amber-950 shadow-sm font-semibold ring-2 ring-amber-500' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'}" role="tab" aria-selected="${isOde}">
                 <div class="flex items-center gap-1.5 text-[11px] font-mono font-bold">
                   <span class="w-1.5 h-1.5 rounded-full ${isOde ? 'bg-amber-600' : 'bg-transparent'}"></span>
                   <span class="${isOde ? 'text-amber-900 font-bold' : 'text-slate-700'}">01 · ODE Early Warning</span>
                 </div>
                 <div class="pl-3 text-[9px] font-mono ${isOde ? 'text-amber-800 font-bold' : 'text-slate-400 font-medium'}">
-                  ~53 min Lead Time
+                  ~83 min Lead Time
                 </div>
               </button>
 
               <!-- Tab 2: Wavelet -->
-              <button id="stickyTabWavelet" class="px-2.5 py-1 rounded-lg text-left transition cursor-pointer flex flex-col justify-center ${isWavelet ? 'bg-white text-sky-950 shadow-sm font-semibold ring-2 ring-sky-500' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'}" role="tab" aria-selected="${isWavelet}">
+              <button id="stickyTabWavelet" class="px-2.5 py-1 rounded-lg text-left transition transform hover:scale-105 duration-200 cursor-pointer flex flex-col justify-center ${isWavelet ? 'bg-white text-sky-950 shadow-sm font-semibold ring-2 ring-sky-500' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'}" role="tab" aria-selected="${isWavelet}">
                 <div class="flex items-center gap-1.5 text-[11px] font-mono font-bold">
                   <span class="w-1.5 h-1.5 rounded-full ${isWavelet ? 'bg-sky-600' : 'bg-transparent'}"></span>
                   <span class="${isWavelet ? 'text-sky-900 font-bold' : 'text-slate-700'}">02 · Spatial Wavelet IDS</span>
@@ -534,12 +534,12 @@ function renderFeaturedResearch(projects, synthesis) {
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4" role="tablist" aria-label="Investigation Selection">
             <!-- Card 01: Investigation 01 (ODE) -->
-            <button id="invCard1" class="text-left p-5 sm:p-6 rounded-2xl transition-all cursor-pointer border flex flex-col justify-between space-y-4 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${isOde ? 'bg-amber-50/60 border-amber-500 shadow-sm ring-1 ring-amber-400/40' : 'bg-white border-slate-200/80 hover:border-slate-300 hover:bg-slate-50/60'}" role="tab" aria-selected="${isOde}">
+            <button id="invCard1" class="group text-left p-5 sm:p-6 rounded-2xl cursor-pointer border flex flex-col justify-between space-y-4 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${isOde ? 'bg-amber-50/60 border-amber-500 shadow-sm ring-1 ring-amber-400/40' : 'bg-white border-slate-200/80 hover:border-amber-400/60 hover:bg-amber-50/20'}" role="tab" aria-selected="${isOde}">
               <div class="space-y-2.5 w-full">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="font-mono font-bold text-xs ${isOde ? 'text-amber-800 bg-amber-100/90' : 'text-slate-500 bg-slate-100'} px-2 py-0.5 rounded">01</span>
-                    <span class="text-[11px] font-mono uppercase tracking-wider font-bold ${isOde ? 'text-amber-800' : 'text-slate-500'}">Investigation 01 · Dynamical Early Warning</span>
+                    <span class="font-mono font-bold text-xs ${isOde ? 'text-amber-800 bg-amber-100/90' : 'text-slate-500 bg-slate-100 group-hover:bg-amber-100 group-hover:text-amber-800 transition'} px-2 py-0.5 rounded">01</span>
+                    <span class="text-[11px] font-mono uppercase tracking-wider font-bold ${isOde ? 'text-amber-800' : 'text-slate-500 group-hover:text-amber-900 transition'}">Investigation 01 · Dynamical Early Warning</span>
                   </div>
                   ${isOde ? `
                     <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-amber-900 bg-white px-2.5 py-0.5 rounded-full border border-amber-200 shadow-2xs">
@@ -547,11 +547,14 @@ function renderFeaturedResearch(projects, synthesis) {
                       VIEWING NOW
                     </span>
                   ` : `
-                    <span class="text-[10px] font-mono text-slate-400 font-medium">INSPECT →</span>
+                    <span class="inline-flex items-center gap-1 text-[10px] font-mono text-amber-700 bg-amber-50 group-hover:bg-amber-600 group-hover:text-white px-2.5 py-0.5 rounded-full border border-amber-200 transition font-semibold">
+                      <span>INSPECT</span>
+                      <span class="transition-transform group-hover:translate-x-0.5">→</span>
+                    </span>
                   `}
                 </div>
 
-                <h3 class="font-serif font-bold text-xl sm:text-2xl text-slate-900 leading-snug">
+                <h3 class="font-serif font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-amber-950 transition leading-snug">
                   Second-Order ODE Early Warning for Network Attacks
                 </h3>
 
@@ -560,23 +563,23 @@ function renderFeaturedResearch(projects, synthesis) {
                 </p>
               </div>
 
-              <div class="pt-3 border-t ${isOde ? 'border-amber-200/70' : 'border-slate-100'} flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+              <div class="pt-3 border-t ${isOde ? 'border-amber-200/70' : 'border-slate-100 group-hover:border-amber-200/60 transition'} flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
                 <div class="text-xs font-mono font-bold text-amber-800">
-                  ~53 min Lead Time · IIT Dhanbad & FTCCI
+                  ~83 min Lead Time · IIT Dhanbad & FTCCI
                 </div>
-                <div class="text-xs font-mono font-semibold px-3 py-1.5 rounded-xl transition ${isOde ? 'bg-amber-600 text-white shadow-2xs self-start sm:self-auto' : 'bg-slate-100 text-slate-700 self-start sm:self-auto'}">
+                <div class="text-xs font-mono font-semibold px-3 py-1.5 rounded-xl transition ${isOde ? 'bg-amber-600 text-white shadow-2xs self-start sm:self-auto' : 'bg-slate-100 text-slate-700 group-hover:bg-amber-600 group-hover:text-white group-hover:shadow-sm self-start sm:self-auto'}">
                   ${isOde ? 'Viewing Investigation 01' : 'Inspect Investigation 01 →'}
                 </div>
               </div>
             </button>
 
             <!-- Card 02: Investigation 02 (Wavelet) -->
-            <button id="invCard2" class="text-left p-5 sm:p-6 rounded-2xl transition-all cursor-pointer border flex flex-col justify-between space-y-4 focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:outline-none ${isWavelet ? 'bg-sky-50/60 border-sky-500 shadow-sm ring-1 ring-sky-400/40' : 'bg-white border-slate-200/80 hover:border-slate-300 hover:bg-slate-50/60'}" role="tab" aria-selected="${isWavelet}">
+            <button id="invCard2" class="group text-left p-5 sm:p-6 rounded-2xl cursor-pointer border flex flex-col justify-between space-y-4 focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:outline-none ${isWavelet ? 'bg-sky-50/60 border-sky-500 shadow-sm ring-1 ring-sky-400/40' : 'bg-white border-slate-200/80 hover:border-sky-400/60 hover:bg-sky-50/20'}" role="tab" aria-selected="${isWavelet}">
               <div class="space-y-2.5 w-full">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="font-mono font-bold text-xs ${isWavelet ? 'text-sky-700 bg-sky-100/90' : 'text-slate-500 bg-slate-100'} px-2 py-0.5 rounded">02</span>
-                    <span class="text-[11px] font-mono uppercase tracking-wider font-bold ${isWavelet ? 'text-sky-800' : 'text-slate-500'}">Investigation 02 · Spatial Representation</span>
+                    <span class="font-mono font-bold text-xs ${isWavelet ? 'text-sky-700 bg-sky-100/90' : 'text-slate-500 bg-slate-100 group-hover:bg-sky-100 group-hover:text-sky-800 transition'} px-2 py-0.5 rounded">02</span>
+                    <span class="text-[11px] font-mono uppercase tracking-wider font-bold ${isWavelet ? 'text-sky-800' : 'text-slate-500 group-hover:text-sky-900 transition'}">Investigation 02 · Spatial Representation</span>
                   </div>
                   ${isWavelet ? `
                     <span class="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-sky-800 bg-white px-2.5 py-0.5 rounded-full border border-sky-200 shadow-2xs">
@@ -584,11 +587,14 @@ function renderFeaturedResearch(projects, synthesis) {
                       VIEWING NOW
                     </span>
                   ` : `
-                    <span class="text-[10px] font-mono text-slate-400 font-medium">INSPECT →</span>
+                    <span class="inline-flex items-center gap-1 text-[10px] font-mono text-sky-700 bg-sky-50 group-hover:bg-sky-600 group-hover:text-white px-2.5 py-0.5 rounded-full border border-sky-200 transition font-semibold">
+                      <span>INSPECT</span>
+                      <span class="transition-transform group-hover:translate-x-0.5">→</span>
+                    </span>
                   `}
                 </div>
 
-                <h3 class="font-serif font-bold text-xl sm:text-2xl text-slate-900 leading-snug">
+                <h3 class="font-serif font-bold text-xl sm:text-2xl text-slate-900 group-hover:text-sky-950 transition leading-snug">
                   Spatial 2D-Wavelet Transform for Network Intrusion Detection
                 </h3>
 
@@ -597,11 +603,11 @@ function renderFeaturedResearch(projects, synthesis) {
                 </p>
               </div>
 
-              <div class="pt-3 border-t ${isWavelet ? 'border-sky-200/70' : 'border-slate-100'} flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
+              <div class="pt-3 border-t ${isWavelet ? 'border-sky-200/70' : 'border-slate-100 group-hover:border-sky-200/60 transition'} flex flex-col sm:flex-row sm:items-center justify-between gap-2 w-full">
                 <div class="text-xs font-mono font-bold text-emerald-700">
                   99.255% Accuracy · INEX 2024 Silver Medal
                 </div>
-                <div class="text-xs font-mono font-semibold px-3 py-1.5 rounded-xl transition ${isWavelet ? 'bg-sky-600 text-white shadow-2xs self-start sm:self-auto' : 'bg-slate-100 text-slate-700 self-start sm:self-auto'}">
+                <div class="text-xs font-mono font-semibold px-3 py-1.5 rounded-xl transition ${isWavelet ? 'bg-sky-600 text-white shadow-2xs self-start sm:self-auto' : 'bg-slate-100 text-slate-700 group-hover:bg-sky-600 group-hover:text-white group-hover:shadow-sm self-start sm:self-auto'}">
                   ${isWavelet ? 'Viewing Investigation 02' : 'Inspect Investigation 02 →'}
                 </div>
               </div>
@@ -708,10 +714,10 @@ function renderFeaturedResearch(projects, synthesis) {
                   <div class="flex items-center gap-2">
                     <span class="font-bold text-slate-800 uppercase tracking-wider text-[11px]">Evidence</span>
                     <span class="text-slate-300">·</span>
-                    <span class="text-slate-600 text-[11px]">Flow Packets/s + Flow Bytes/s · first/second-order dynamics · benign ODE identification · residual-based thresholding · ≈53 min lead time</span>
+                    <span class="text-slate-600 text-[11px]">Flow Packets/s + Flow Bytes/s · first/second-order dynamics · benign ODE identification · residual-based thresholding · ≈83 min lead time (testing data)</span>
                   </div>
                   <div class="flex items-center gap-2 text-xs font-mono">
-                    <span class="font-semibold text-amber-800">Result: Precursor alert ≈53 min prior to volumetric peak</span>
+                    <span class="font-semibold text-amber-800">Result: Precursor alert ≈83 min prior to volumetric peak (testing data)</span>
                     <span class="text-slate-300">·</span>
                     <span class="text-slate-500">IIT Dhanbad (DPA-NS 2025) & FTCCI IITEX 2025</span>
                   </div>
@@ -758,7 +764,7 @@ function renderFeaturedResearch(projects, synthesis) {
                   </span>
                   <span class="text-slate-300">·</span>
                   <span class="text-[11px] font-mono text-slate-500 font-medium">
-                    ${isOde ? 'Continuous 2nd-Order ODE (~53 min Lead)' : 'Spatial 2D-Wavelet Transform (99.255%)'}
+                    ${isOde ? 'Continuous 2nd-Order ODE (~83 min Lead)' : 'Spatial 2D-Wavelet Transform (99.255%)'}
                   </span>
                 </div>
 
@@ -769,7 +775,7 @@ function renderFeaturedResearch(projects, synthesis) {
                 <p class="text-xs font-mono text-slate-600">
                   ${isOde 
                     ? '58 features → 8×8 spatial matrix → 2D Haar DWT → Extra Trees (99.255% accuracy)' 
-                    : 'Continuous dynamics → rate-of-change curvature → observed precursor signal (~53 min lead time)'}
+                    : 'Continuous dynamics → rate-of-change curvature → observed precursor signal (~83 min lead time)'}
                 </p>
               </div>
 
@@ -817,7 +823,7 @@ function renderFeaturedResearch(projects, synthesis) {
               </tr>
               <tr>
                 <td class="py-2 pr-3 font-mono font-medium text-slate-700">Key Empirical Result</td>
-                <td class="py-2 px-3 font-mono font-bold text-amber-800">~53 min observed lead time (IIT Dhanbad / FTCCI)</td>
+                <td class="py-2 px-3 font-mono font-bold text-amber-800">~83 min observed lead time (testing data · IIT Dhanbad / FTCCI)</td>
                 <td class="py-2 pl-3 font-mono font-bold text-emerald-700">99.255% accuracy (INEX 2024 Silver Medal)</td>
               </tr>
             </tbody>
@@ -853,7 +859,7 @@ function renderFeaturedResearch(projects, synthesis) {
                 <span class="w-2 h-2 rounded-full bg-amber-500"></span>
               </div>
               <div class="font-serif font-bold text-sm text-slate-900">Early-Warning Signal</div>
-              <p class="text-xs text-slate-500 leading-relaxed font-sans">Inflection alert (~53 min lead time) triggering elevated flow telemetry capture.</p>
+              <p class="text-xs text-slate-500 leading-relaxed font-sans">Inflection alert (~83 min lead time on testing data) triggering elevated flow telemetry capture.</p>
             </div>
 
             <div class="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1.5">
@@ -1178,9 +1184,12 @@ function renderResearchOutput(output) {
           if (p.result && p.result.includes("Silver Medal")) {
             badgeColor = "bg-emerald-50 text-emerald-800 border border-emerald-200/70";
             badgeIcon = "award";
-          } else if (p.result && p.result.includes("53-Minute")) {
+          } else if (p.result && (p.result.includes("83-Minute") || p.result.includes("83 Min"))) {
             badgeColor = "bg-amber-50 text-amber-900 border border-amber-200/70";
             badgeIcon = "activity";
+          } else if (p.result && (p.result.includes("Research Square") || p.result.includes("Preprint"))) {
+            badgeColor = "bg-sky-50 text-sky-800 border border-sky-300 font-semibold";
+            badgeIcon = "file-text";
           } else if (p.result && p.result.includes("Presentation")) {
             badgeColor = "bg-sky-50 text-sky-800 border border-sky-200/70";
             badgeIcon = "presentation";
@@ -1189,7 +1198,7 @@ function renderResearchOutput(output) {
             badgeIcon = "file-edit";
           }
 
-          const venueIcon = (i === 0) ? "award" : (i === 3 ? "file-text" : "presentation");
+          const venueIcon = (i === 0) ? "award" : (p.link || (p.result && p.result.includes("Preprint")) ? "file-text" : "presentation");
 
           return `
             <div class="timeline-milestone pb-6 ${i !== output.length - 1 ? 'border-b border-slate-100' : ''}">
@@ -1225,6 +1234,15 @@ function renderResearchOutput(output) {
                 <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans pt-1 max-w-3xl">
                   ${p.summary}
                 </p>
+
+                ${p.link ? `
+                  <div class="pt-2">
+                    <a href="${p.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-sky-50 text-sky-800 hover:bg-sky-100 border border-sky-200/80 transition shadow-2xs">
+                      <i data-lucide="external-link" class="w-3.5 h-3.5 text-sky-600"></i>
+                      <span>Access Preprint (DOI: ${p.doi || '10.5281/zenodo.23671072'}) →</span>
+                    </a>
+                  </div>
+                ` : ''}
               </div>
             </div>
           `;

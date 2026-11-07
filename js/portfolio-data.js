@@ -40,6 +40,8 @@ const PORTFOLIO_DATA = {
       portfolio: "https://harshithreddymadireddy.github.io/portfolio/",
       github: "https://github.com/harshithreddymadireddy",
       linkedin: "https://www.linkedin.com/in/harshith-reddy-madireddy",
+      doi: "https://doi.org/10.5281/zenodo.23671072",
+      researchSquare: "https://doi.org/10.5281/zenodo.23671072",
       cv: "assets/documents/Harshith_Reddy_Madireddy_Academic_CV.pdf"
     }
   },
@@ -49,9 +51,9 @@ const PORTFOLIO_DATA = {
   // -----------------------------------------------------------------------
   selectedResults: [
     {
-      value: "~53 Min",
+      value: "~83 Min",
       label: "Observed Early-Warning Signal",
-      context: "Observed anomalous curvature approximately 3,200 seconds before the observed volumetric peak in the investigated network traffic traces."
+      context: "Observed anomalous curvature approximately 83 minutes (~5,000 seconds) prior to the observed volumetric peak on evaluated testing traffic traces (calibrated from 53 minutes on training data)."
     },
     {
       value: "99.255%",
@@ -120,7 +122,7 @@ const PORTFOLIO_DATA = {
         caveat: "The observed lead time is trace-dependent and represents an empirical investigation rather than a generalized operational deployment."
       },
       modelsExplored: null,
-      documentedResult: "≈53 min Lead Time: Identified anomalous curvature ~3,200 seconds prior to observed volumetric attack peak.",
+      documentedResult: "≈83 min Lead Time: Identified anomalous curvature ~83 minutes (~5,000s) prior to observed volumetric attack peak on testing data (calibrated from 53 min on training data).",
       liveDemoUrl: "https://ddos-ews.onrender.com",
       chronology: "First Research Investigation • Academic Conference Presentations",
       status: "Presented at Academic Conferences",
@@ -128,7 +130,7 @@ const PORTFOLIO_DATA = {
         { label: "Signals", desc: "Flow Packets/s + Flow Bytes/s" },
         { label: "System ID", desc: "Benign homogeneous ODE identification" },
         { label: "Thresholding", desc: "Residual-based thresholding (μ + kσ)" },
-        { label: "Lead Time", desc: "≈53 min early-warning lead time" }
+        { label: "Lead Time", desc: "≈83 min early-warning lead time (testing data)" }
       ]
     },
     {
@@ -173,7 +175,7 @@ const PORTFOLIO_DATA = {
     summary: "The two studies suggest a complementary pipeline in which an early-warning signal could trigger more detailed flow-level analysis using the evaluated wavelet representation and classifier.",
     flowSteps: [
       { step: "01 CONTINUOUS MONITORING", title: "Time-Domain Precursor", desc: "Second-order ODE rate-of-change curvature tracking subtle preparatory anomalies." },
-      { step: "02 PRECURSOR TRIGGER", title: "Early-Warning Signal", desc: "Inflection alert (~53 min lead time) triggering elevated flow telemetry capture." },
+      { step: "02 PRECURSOR TRIGGER", title: "Early-Warning Signal", desc: "Inflection alert (~83 min lead time on testing data) triggering elevated flow telemetry capture." },
       { step: "03 SPATIAL TRANSFORMATION", title: "2D-Wavelet Sub-Bands", desc: "8×8 spatial matrix decomposed into LL, LH, HL, and HH frequency sub-bands." },
       { step: "04 CLASSIFIER INFERENCE", title: "Flow-Level Classification", desc: "Extra Trees model (99.255%) distinguishing attack signatures from benign flows." }
     ]
@@ -446,14 +448,17 @@ const PORTFOLIO_DATA = {
       summary: "Presented research on dynamical modeling, early-warning characterization, and spatial wavelet representations for network security."
     },
     {
-      shortVenue: "Working Manuscript",
-      category: "WORKING MANUSCRIPT",
-      year: "2025–2026",
-      title: "Spatial Wavelet Transforms and Dynamical Formulations for Anomaly Detection in Network Telemetry",
-      venue: "Manuscript in preparation",
-      status: "In Preparation",
-      result: "In Preparation",
-      summary: "Consolidates the mathematical formulation, classifier benchmark, and dynamical lead-time analysis developed across the two undergraduate investigations."
+      shortVenue: "Research Square · Zenodo",
+      category: "PREPRINT · MAJOR JOURNAL / CONFERENCE SUBMISSION",
+      year: "2026",
+      title: "A dual-pillar framework for DDoS detection combining ODE-inspired early-warning signal analysis with wavelet-based machine learning classification",
+      venue: "Preprint published on Research Square · DOI: 10.5281/zenodo.23671072 · Forthcoming in major journals / conferences",
+      status: "Preprint Available",
+      result: "Preprint · DOI Available",
+      doi: "10.5281/zenodo.23671072",
+      doiUrl: "https://doi.org/10.5281/zenodo.23671072",
+      link: "https://doi.org/10.5281/zenodo.23671072",
+      summary: "Integrates continuous second-order ODE dynamical early-warning signal analysis (~83 min lead time on testing data) with 2D-wavelet spatial decomposition and Extra Trees classification (99.255% accuracy) into a unified dual-pillar DDoS defense framework."
     }
   ],
 
