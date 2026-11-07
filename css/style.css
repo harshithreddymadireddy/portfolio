@@ -960,6 +960,29 @@ h1, h2, h3, h4, .font-serif {
   scrollbar-width: none;
 }
 
+/* 8.2 INVESTIGATION 1 & 2 INTERACTIVE ENLARGEMENT ON HOVER */
+#invCard1,
+#invCard2 {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+  will-change: transform, box-shadow;
+  position: relative;
+}
+
+#invCard1:hover,
+#invCard2:hover {
+  transform: translateY(-5px) scale(1.025);
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  z-index: 10;
+}
+
+#invCard1:active,
+#invCard2:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
 /* 9. PRINT STYLESHEET */
 @media print {
   * {
